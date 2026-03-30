@@ -1,0 +1,223 @@
+/* 🌌 GLOBAL BACKGROUND */
+body {
+    margin: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+
+    background: radial-gradient(circle at top, #1f1f2e, #0a0a0f);
+    overflow: hidden;
+}
+
+/* 🎮 LAYOUT */
+#game-layout {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+/* 🐼 PANDA AREA */
+#master-area {
+    text-align: center;
+    width: 220px;
+}
+
+/* 🐼 PANDA IMAGE (SPRITE) */
+#panda-mascot {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    transition: all 0.3s ease;
+
+    animation: float 3s ease-in-out infinite;
+
+    box-shadow: 0 0 20px rgba(255,255,255,0.1);
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* 💬 AI BUBBLE */
+#ai-bubble {
+    margin-top: 15px;
+    padding: 12px;
+
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+
+    border-radius: 12px;
+    font-size: 0.9rem;
+
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+
+    transition: opacity 0.3s ease;
+}
+
+/* 🎮 GAME CONTAINER */
+#game-container {
+    padding: 25px 30px;
+
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.6);
+
+    text-align: center;
+}
+
+/* TITLE */
+h1 {
+    margin: 0 0 10px 0;
+
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* INSTRUCTIONS */
+#instructions {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-bottom: 15px;
+}
+
+/* 🧠 BOARD */
+#board {
+    display: grid;
+    grid-template-rows: repeat(5, 64px);
+    gap: 10px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(5, 64px);
+    gap: 10px;
+}
+
+/* 🔲 CELL */
+.cell {
+    width: 64px;
+    height: 64px;
+
+    border-radius: 12px;
+    border: 2px solid #3a3a3c;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.8rem;
+    font-weight: bold;
+
+    background: rgba(255,255,255,0.05);
+
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+/* Hover */
+.cell:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 12px rgba(255,255,255,0.2);
+}
+
+/* Pop Animation */
+.pop {
+    transform: scale(1.15);
+    border-color: #fff;
+    box-shadow: 0 0 15px rgba(255,255,255,0.4);
+}
+
+/* Shake */
+.shake {
+    animation: shake 0.4s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+}
+
+/* 🎨 CELL COLORS */
+.blue {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    border: none;
+    box-shadow: 0 0 15px rgba(0,114,255,0.8);
+}
+
+.orange {
+    background: linear-gradient(135deg, #ffb347, #ff8c00);
+    border: none;
+    box-shadow: 0 0 15px rgba(255,140,0,0.8);
+}
+
+.black {
+    background-color: #2a2a2c;
+    border-color: #2a2a2c;
+}
+
+/* 🔥 SCORE */
+#score-display {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+
+    color: #00ff9d;
+    text-shadow: 0 0 10px rgba(0,255,157,0.6);
+}
+
+/* 🎮 CONTROLS */
+#controls {
+    margin-top: 15px;
+}
+
+/* BUTTON */
+button {
+    padding: 10px 16px;
+    margin: 5px;
+
+    border: none;
+    border-radius: 10px;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+
+    transition: all 0.2s ease;
+}
+
+/* Button Hover */
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(0,114,255,0.7);
+}
+
+/* Button Click */
+button:active {
+    transform: scale(0.95);
+}
+
+/* ✨ FADE-IN */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ThinkNumb | Master the Numbers</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div id="game-layout">
+
+    <!-- 🐼 Panda -->
+    <div id="master-area">
+        <div class="panda-container">
+            <img id="panda-mascot" src="panda-states.png">
+        </div>
+        <div id="ai-bubble">Greetings, student. Prepare your mind.</div>
+    </div>
+
+    <!-- 🎮 Game -->
+    <div id="game-container">
+        <h1>THINKNUMB</h1>
+        <div id="instructions">Match the correct 5-digit code!</div>
+
+        <div id="board"></div>
+
+        <div id="score-display">🔥 Streak: <span id="streak-count">0</span></div>
+
+        <div id="controls">
+            <button id="sound-toggle">🔊 Sound</button>
+        </div>
+    </div>
+</div>
+
+<audio id="pop-sound">
+    <source src="https://www.soundjay.com/buttons/sounds/button-20.mp3">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>
